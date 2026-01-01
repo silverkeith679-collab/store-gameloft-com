@@ -1,0 +1,1 @@
+window.addEventListener("load",(()=>{document.querySelector('.body-loading-block').remove()}));

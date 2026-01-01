@@ -1,0 +1,1286 @@
+<!DOCTYPE html>
+<html lang="en" data-gl-lang="en">
+<head>
+    <title>Home</title>
+    <script>
+        var Gameloft=Gameloft||{};Gameloft.core=Gameloft.core||{};Gameloft.core.addEventListener=function(a,c,b){"undefined"===typeof b&&(b=!1);this._addEventListener(a,c,b);this.eventListeners=this.eventListeners||{};this.eventListeners[a]=this.eventListeners[a]||[];this.eventListeners[a].push({listener:c,options:b});};Window.prototype._addEventListener=Window.prototype.addEventListener;Window.prototype.addEventListener=Gameloft.core.addEventListener;
+        Document.prototype._addEventListener=Document.prototype.addEventListener;Document.prototype.addEventListener=Gameloft.core.addEventListener;Element.prototype._addEventListener=Element.prototype.addEventListener;Element.prototype.addEventListener=Gameloft.core.addEventListener;
+    </script>
+            <script>
+        (performance||window.performance)&&window.addEventListener("load",function(e){setTimeout(function(){var c=new XMLHttpRequest;c.open("POST",function(a){return(0<=a.search(/^\/\/.*/)?window.location.protocol||location.protocol||"https:":"")+a}("https://wapshop.gameloft.com/assets/5.1/apis/tracking/events/pageload/"),!0);c.setRequestHeader("Accept","application/json");c.setRequestHeader("Content-Type","application/json");c.send(JSON.stringify(function(){var a={},b=performance||window.performance;a.timestamp=Date.now();a.userAgent=window.navigator.userAgent||navigator.userAgent;a.viewport=window.innerWidth+"x"+window.innerHeight;a.pageTitle=document.title;a.url=document.URL;var d=Date.now()-b.now();b=b.getEntriesByType("navigation")[0];a.serverHitTime=1767288982368;a.navigationStart=d+(b.workerStart||b.fetchStart||0)-((b.redirectEnd||0)-(b.redirectStart||0));a.requestStart=d+b.requestStart;a.responseEnd=d+b.responseEnd;a.loadEventEnd=d+b.loadEventEnd;a.operation=19513;a.sessionId="128jrz4efabu5sjprnb4toc82";a.trxId="01jdwa3j3jl3fpp6sk70wc2ywt";return a}()))},0)});
+    </script>
+    
+                <script>
+            function updateTrackingStep(metaTag) {
+                let step = metaTag.getAttribute('data-step');
+                if (!step.includes('_retry')) {
+                    step += '_retry';
+                }
+
+                if (metaTag.hasAttribute('data-ddoi')) {
+                    if (step.includes('first')) {
+                        step = 'second';
+                    }
+                }
+                if (metaTag.hasAttribute('data-ddoi-wifi')) {
+                    if (step.includes('msisdn_input')) {
+                        step = 'pin_input';
+                    }
+                }
+
+                metaTag.setAttribute('data-step', step);
+            }
+
+            function handleFormTracking(form, metaTag) {
+                if (localStorage.getItem('autosubmit')) {
+                    localStorage.removeItem('autosubmit');
+                    sendTrackingData(metaTag.getAttribute('data-step-autosubmit').trim());
+                } else {
+                    sendTrackingData(metaTag.getAttribute('data-step').trim());
+                }
+                updateTrackingStep(metaTag);
+            }
+
+            function sendTrackingData(step) {
+                let xhr = new XMLHttpRequest();
+                let url = "https://wapshop.gameloft.com/assets/5.1/apis/tracking/events/lp_cta_click/";
+                xhr.open('POST', (0 <= url.search(/^\/\/.*/) ? window.location.protocol || location.protocol || 'https:' : '') + url, true);
+                xhr.setRequestHeader('Content-Type', "application/json");
+                xhr.send(JSON.stringify({
+                    trxId: "01jdwa3j3js25xh6rfmhmqxm5p",
+                    operation: 19513,
+                    pageTitle: document.title,
+                    sessionId: "128jrz4efabu5sjprnb4toc82",
+                    userAgent: window.navigator.userAgent || navigator.userAgent,
+                    viewport: window.innerWidth + 'x' + window.innerHeight,
+                    url: document.URL,
+                    timestamp: Date.now(),
+                    step: step,
+                    flow: document.querySelector("meta[data-name='lp_cta_click_event_tracking']").getAttribute('data-flow').trim(),
+                    formAction: document.querySelector('form').getAttribute('action')
+                }));
+            }
+
+            document.addEventListener('DOMContentLoaded', function () {
+                let metaTag = document.querySelector("meta[data-name='lp_cta_click_event_tracking']");
+                const otpInput = document.querySelector('input[autocomplete="one-time-code"]');
+                document.querySelectorAll('form').forEach((form) => {
+                        if (metaTag && form && !form.getAttribute('data-is-listener-added')) {
+                            form.setAttribute('data-is-listener-added', 'true');
+                            if (otpInput) {
+                                form.addEventListener('submit', function () {
+                                    handleFormTracking(form, metaTag);
+                                });
+                                form.querySelectorAll('button[type="button"]').forEach(function (button) {
+                                    button.addEventListener('click', function () {
+                                        handleFormTracking(form, metaTag);
+                                    });
+                                });
+                            } else {
+                                form.querySelectorAll('button').forEach(function (button) {
+                                    button.addEventListener('click', function () {
+                                        sendTrackingData(metaTag.getAttribute('data-step').trim());
+                                        updateTrackingStep(metaTag);
+                                    });
+                                });
+                            }
+                        }
+                    }
+                )
+            });
+        </script>
+    
+        
+                <link rel="preconnect" href="https://www.googletagmanager.com/">
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com/" crossorigin="anonymous">
+
+        <script>
+            window.dataLayer = window.dataLayer || [];
+                        window.dataLayer.push({"gmfPageName":"Home","loginStatus":"Not logged","siteCountry":"France","siteLanguage":"EN"});
+                    </script>
+
+        <script>
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+                'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-W73WJCH');
+        </script>
+
+                
+                <meta charset="UTF-8" >
+            <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" >
+            <meta name="theme-color" content="#000000" >
+            <meta name="referrer" content="origin-when-cross-origin" >
+        
+                <link href="manifest.php?phoneId=1402&amp;sv=128jrz4efabu5sjprnb4toc82&amp;c=73&amp;lan=2" rel="manifest" />
+            <link rel="preconnect" href="https://media07-gl-ssl-gzip.gameloft.com/" crossorigin="anonymous" />
+            <link rel="dns-prefetch" href="https://media07-gl-ssl-gzip.gameloft.com/" />
+            <link rel="shortcut icon" href="https://wapshop.gameloft.com/assets/5.1/images/Sp/ico/favicon.ico" />
+        
+                <link rel="preload" href="https://wapshop.gameloft.com/assets/5.1/libs/magnific-popup/magnific-popup.css" as="style">
+        <link rel="stylesheet" href="https://wapshop.gameloft.com/assets/5.1/libs/magnific-popup/magnific-popup.css" media="print" onload="this.media='all'">
+        <noscript><link href="https://wapshop.gameloft.com/assets/5.1/libs/magnific-popup/magnific-popup.css" rel="stylesheet" type="text/css"></noscript>
+            <link rel="preload" href="https://wapshop.gameloft.com/assets/5.1/libs/slick/slick-theme_slick.min.css" as="style">
+        <link rel="stylesheet" href="https://wapshop.gameloft.com/assets/5.1/libs/slick/slick-theme_slick.min.css" media="print" onload="this.media='all'">
+        <noscript><link href="https://wapshop.gameloft.com/assets/5.1/libs/slick/slick-theme_slick.min.css" rel="stylesheet" type="text/css"></noscript>
+            <link rel="preload" href="https://wapshop.gameloft.com/assets/5.1/css/Sp/main_colors.min.css" as="style">
+        <link rel="stylesheet" href="https://wapshop.gameloft.com/assets/5.1/css/Sp/main_colors.min.css" media="print" onload="this.media='all'">
+        <noscript><link href="https://wapshop.gameloft.com/assets/5.1/css/Sp/main_colors.min.css" rel="stylesheet" type="text/css"></noscript>
+        
+            <style type="text/css">html{height:100%;font-size:12px}@media screen and (max-width:319px){html{font-size:8px}}@media screen and (min-width:320px) and (max-width:359px){html{font-size:11px}}@media screen and (min-width:360px) and (max-width:479px){html{font-size:12px}}@media screen and (min-width:480px) and (max-width:539px){html{font-size:12px}}@media screen and (min-width:540px) and (max-width:599px){html{font-size:14px}}@media screen and (min-width:600px) and (max-width:719px){html{font-size:15px}}@media screen and (min-width:720px) and (max-width:1079px){html{font-size:18px}}@media screen and (min-width:1080px) and (max-width:1279px){html{font-size:27px}}@media screen and (min-width:1280px) and (max-width:1439px){html{font-size:32px}}@media screen and (min-width:1440px) and (max-width:1919px){html{font-size:36px}}@media screen and (min-width:1920px) and (max-width:2159px){html{font-size:48px}}@media screen and (min-width:2160){html{font-size:54px}}.small-text, .gameslist .size{font-size:0.833rem}.gameslist .category, .rating{font-size:0.917rem}.rating > img{width:0.917rem}h4, .medium-text, .subscription-info, .bot-nav-thumb > p, .slider, #download-tutorial-popup{font-size:1rem}.x-large-text, .terms-button, .subscription-info span, .remaining-credits, #top-main-slider{font-size:1.167rem}#download-tutorial-popup .number-in-cycle{font-size:1.167rem;width:1.167rem;height:1.167rem;padding:0.5835rem;text-align:center}#download-tutorial-popup .download-tutorial-header .text-title{font-size:1.5rem;font-weight:bold}.xm-large-text, #download-tutorial-popup .text-title{font-size:1.333rem}.xl-large-text{font-size:1.5rem}.xxm-large-text, h1{font-size:1.667rem}.xxl-large-text, h2{font-size:calc(1rem + 2.1vw);}@supports (font-size:clamp(12px, 5vw, 117px)){.xxl-large-text, h2{font-size:clamp(12px, 5vw, 117px)}}.button-primary, .button-secondary, .button-important, .button-minimal, .button-subscribe, .button-download, .button-play, .button-favorite, .button-ppd, .button-rate, .button-tertiary{text-decoration:none;cursor:pointer;padding:1rem;font-size:1.083rem;font-weight:600;line-height:1em;border-radius:0.667rem;-webkit-border-radius:0.667rem;-moz-border-radius:0.667rem;white-space:nowrap;text-align:center}.button-tertiary{background-color:rgba(159, 175, 178, 0.1)}.button-primary{color:#FFFFFF;background-color:#1898FF}.button-minimal{padding:0}.button-favorite{padding:0.625rem}.button-favorite img{width:1.833rem}.button-primary, .button-secondary, .button-important{padding-left:3.167rem;padding-right:3.167rem}.inline-block{display:inline-block}body{height:100%;margin:0;padding:0;font-family:Roboto, sans-serif;overflow-x:hidden;max-width:100% !important}footer > ul{margin:0}a{text-decoration:none}a, a:visited, a:hover, a:active{color:inherit}hr{clear:both;height:1px;border:0}h1{font-weight:bold;letter-spacing:-0.83px}h2{font-weight:600;margin:0;padding:0}h4{margin-left:2.5%;margin-right:2.5%}h6{font-weight:500;text-align:center}ul{padding:0;margin:0;list-style:none}footer{position:fixed;left:0;bottom:0;width:100%;text-align:center;border-top:solid 1px;z-index:1500}footer > ul > li{width:25%;margin:0;float:left;padding:2% 0 2% 0}strong, .bold-text{font-weight:600}form button{border:0;margin:0;padding:0;background-color:transparent}.module-conditions a{text-decoration:underline}.block-on-background{width:100%;height:100%;position:relative;background-size:contain;background-repeat:no-repeat}.block-on-background > *{width:100%}.block-on-background > * + *{position:absolute;top:0;left:0;width:100%;text-align:center}.mfp-container{padding:0 !important;margin:0 !important}.mfp-wrap{-webkit-overflow-scrolling:touch;-webkit-transform:translateZ(0)}.gl-mfp-zoom-in{z-index:2000}.gl-mfp-blur + header, .gl-mfp-blur + header ~ *{filter:blur(12px)}.gl-mfp-popup-notification{background-color:transparent}.block-video-on-background{width:100%;height:100%;position:relative;background-size:contain;background-repeat:no-repeat}.block-video-on-background > video{width:100%}.block-video-on-background > div{position:absolute;top:0;left:0;width:100%;text-align:center}body, .popup-page{color:#0B0B0B;background-color:#FFFFFF}.mfp-close-btn-in .mfp-close{color:#FFFFFF}#download-tutorial-popup .mfp-close{color:#000000}.mfp-close-btn-in .popup-default .mfp-close, .mfp-close-btn-in .popup-lightbox .mfp-close, .mfp-close-btn-in .popup-notification .mfp-close{color:#BFBFBF}.full-width{width:100%}</style>
+        
+    
+        <script>var settings = {"cookies":{"cookie_disclaimer":{"name":"gl_cookies","value":"1","expires":23328000,"path":"\/"},"theme":{"name":"gl_theme","expires":23328000,"path":"\/"},"download_tutorial":{"name":"gl_download_tutorial","value":"1","expires":23328000,"path":"\/"},"device_homescreen":{"name":"gl_add_to","value":"1","expires":23328000,"path":"\/"},"device_bookmarks":{"name":"gl_add_to","value":"1","expires":23328000,"path":"\/"},"favorites":{"name":"gl_favorites","expires":23328000,"path":"\/"},"favorite_videos":{"name":"gl_favorite_videos","expires":23328000,"path":"\/"},"welcome_back":{"name":"gl_welcome","path":"\/","value":"1","expires":86400},"download_app":{"name":"gl_download_app","path":"\/","value":"1","expires":0},"downloaded_app":{"name":"gl_downloaded_app","path":"\/","value":"1","expires":23328000}},"search":{"products":{"request_url":"https:\/\/store.gameloft.com\/games.php?phoneId=1402&sv=128jrz4efabu5sjprnb4toc82&c=73&lan=2"}},"serviceworker_url":"serviceworker.php?phoneId=1402&sv=128jrz4efabu5sjprnb4toc82&c=73&lan=2","is_webotp_api_enabled":false};var Gameloft = Gameloft || {}; Gameloft.settings = settings;</script>
+    
+            <script type="text/javascript">if (window.self !== window.top) {
+    window.top.location.href = window.self.location.href;
+}</script>
+        
+            <script src="https://wapshop.gameloft.com/assets/5.1/libs/jquery/jquery.min.js" type="text/javascript" defer="defer" ></script>
+        <script src="https://wapshop.gameloft.com/assets/5.1/libs/magnific-popup/jquery.magnific-popup.min.js" type="text/javascript" defer="defer" ></script>
+        <script src="https://wapshop.gameloft.com/assets/5.1/libs/slick/slick.min.js" type="text/javascript" defer="defer" ></script>
+        <script src="https://wapshop.gameloft.com/assets/5.1/js/Sp/header.min.js" type="text/javascript" defer="defer" ></script>
+        
+        </head>
+<body>
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W73WJCH" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+
+
+<div class="body-loading-block"><style>.body-loading-block{background-color:#fff;position:fixed;top:0;left:0;width:100%;height:100%;display:flex;align-items:center;justify-content:center;z-index:9999;}.body-loading-block>*{background:no-repeat linear-gradient(#1898FF 0 0) 0 0,no-repeat linear-gradient(#1898FF 0 0) 0 50%,no-repeat linear-gradient(#1898FF 0 0) 0 100%,no-repeat linear-gradient(#1898FF 0 0) 50% 0,no-repeat linear-gradient(#1898FF 0 0) 50% 50%,no-repeat linear-gradient(#1898FF 0 0) 50% 100%,no-repeat linear-gradient(#1898FF 0 0) 100% 0,no-repeat linear-gradient(#1898FF 0 0) 100% 50%,no-repeat linear-gradient(#1898FF 0 0) 100% 100%;background-size:1rem 1rem;animation:body-loading-animation .5s infinite alternate;}@keyframes body-loading-animation{0%,20%{width:3rem;height:3rem}90%,100%{width:4rem;height:4rem}}</style><noscript><style>.body-loading-block{display:none;}</style></noscript><div></div></div><script>window.addEventListener("load",(()=>{document.querySelector('.body-loading-block').remove()}));</script>
+<style>
+    /* Cookie Notice */
+
+    .cookie-notice-block {
+        display: block;
+        width: 0;
+        height: 0;
+    }
+
+    .cookie-notice {
+        position: fixed;
+        left: 0;
+        right: 0;
+        font-size: 1em;
+        line-height: 1.17em;
+        z-index: 10000;
+        background-color: #1898FF;
+        color: white;
+    }
+
+    .cookie-notice.top {
+        top: 0;
+        border-radius: 0 0 1.17em 1.17em;
+    }
+
+    .cookie-notice.bottom {
+        bottom: 0;
+        border-radius: 1.17em 1.17em 0 0;
+    }
+
+    .cookie-notice > * > * {
+        width: 100%;
+        display: -webkit-box;
+        display: -moz-box;
+        display: -webkit-flexbox;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -moz-box-orient: horizontal;
+        -webkit-flex-direction: row;
+        -moz-flex-direction: row;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -webkit-box-pack: space-between;
+        -moz-box-pack: space-between;
+        -webkit-flex-pack: space-between;
+        -ms-flex-pack: space-between;
+        -moz-justify-content: space-between;
+        -webkit-justify-content: space-between;
+        justify-content: space-between;
+    }
+
+    .cookie-notice a {
+        color: inherit;
+    }
+
+    .cookie-notice > div {
+        padding: 1.5em 1.7em 1em;
+    }
+
+    .cookie-notice > div > div + div {
+        padding-top: 1em;
+    }
+
+    .cookie-notice .buttons a {
+        min-width: 8em;
+        color: inherit;
+        text-decoration: none;
+        letter-spacing: 0;
+        text-align: center;
+        box-sizing: border-box;
+        border: 1px solid #FFFFFF;
+        padding: 0.4em 1.5em;
+        border-radius: 1.33em;
+    }
+
+    .cookie-notice .cookie-icon > img {
+        width: 2.58em;
+        margin-right: 1.33em;
+    }
+
+    .cookie-notice .close-icon {
+        position: relative;
+        right: -1em;
+        top: -0.8em;
+        margin-left: -0.5em;
+        margin-bottom: -0.8em;
+    }
+
+    .cookie-notice .close-icon > img {
+        width: 2em;
+    }
+
+    /* Cookie Notice More */
+
+    .cookie-notice-more-block {
+        color: rgb(0,0,0);
+        display: block;
+        width: 0;
+        height: 0;
+    }
+    
+    .cookie-notice-more-block ul {
+        list-style: disc;
+        padding-left: 2em;
+        margin-top: 1em;
+    }
+
+    .cookie-notice-more-block > * {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.75);
+        z-index: 10000;
+        overflow: auto;
+        display: -webkit-box;
+        display: -moz-box;
+        display: -webkit-flexbox;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -moz-box-orient: horizontal;
+        -webkit-flex-direction: row;
+        -moz-flex-direction: row;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .cookie-notice-more-block > * > * {
+        margin: auto;
+        overflow: auto;
+    }
+
+    .cookie-notice-more {
+        background-color: #fff;
+        width: 80%;
+        font-size: 1.17em;
+        border-radius: 0.72em;
+    }
+
+    .cookie-notice-more .cookie-icon {
+        width: 1.25em;
+        margin-right: 0.4em;
+    }
+
+    .cookie-notice-more .gl-el-header {
+        display: -webkit-box;
+        display: -moz-box;
+        display: -webkit-flexbox;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -moz-box-orient: horizontal;
+        -webkit-flex-direction: row;
+        -moz-flex-direction: row;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -webkit-box-pack: justify;
+        -moz-box-pack: justify;
+        -webkit-flex-pack: justify;
+        -ms-flex-pack: justify;
+        -moz-justify-content: space-between;
+        -webkit-justify-content: space-between;
+        justify-content: space-between;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        -moz-align-items: center;
+        align-items: center;
+        padding: 0.8em;
+    }
+
+    .cookie-notice-more .gl-el-header {
+        background-color: #1898FF;
+        color: #fff;
+    }
+
+    .cookie-notice-more .gl-el-header > div {
+        width: 100%;
+        text-align: center;
+        text-transform: capitalize;
+        font-size: 1.14em;
+        font-weight: 500;
+
+        display: -webkit-box;
+        display: -moz-box;
+        display: -webkit-flexbox;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -moz-box-pack: center;
+        -webkit-flex-pack: center;
+        -ms-flex-pack: center;
+        -moz-justify-content: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        -moz-align-items: center;
+        align-items: center;
+    }
+
+    .cookie-notice-more .gl-el-body {
+        color: #A2B1B3;
+        overflow: auto;
+        padding: 1em 1.35em 0.5em;
+    }
+
+    .cookie-notice-more .gl-el-body h3 {
+        font-size: 1.14em;
+        margin-top: 0;
+        margin-bottom: 0.6em;
+        text-align: center;
+        color: #000000;
+    }
+
+    .cookie-notice-more .gl-el-body a {
+        color: #1898FF;
+        text-decoration: underline;
+    }
+
+    .cookie-notice-more .gl-el-footer {
+        display: -webkit-box;
+        display: -moz-box;
+        display: -webkit-flexbox;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-box-pack: center;
+        -moz-box-pack: center;
+        -webkit-flex-pack: center;
+        -ms-flex-pack: center;
+        -moz-justify-content: center;
+        -webkit-justify-content: center;
+        justify-content: center;
+        padding: 0.5em 1.35em 1em;
+    }
+
+    .cookie-notice-more .gl-el-footer a {
+        background-color: rgba(159, 175, 178, 0.1);
+        text-align: center;
+        display: inline-block;
+        font-size: 0.93em;
+        padding: 1em;
+        border-radius: 0.7em;
+        font-weight: bold;
+    }
+
+    /* Scrollbar */
+
+    .cookie-notice-more .gl-el-body::-webkit-scrollbar {
+        width: 0.43em;
+    }
+
+    .cookie-notice-more .gl-el-body::-webkit-scrollbar-track {
+        background: #F5F7F7;
+        border-radius: 0.57em;
+    }
+
+    .cookie-notice-more .gl-el-body::-webkit-scrollbar-thumb {
+        background: #1898FF;
+        border-radius: 0.57em;
+    }
+
+    /* Dark theme */
+
+    
+</style>
+<div id="cookie-disclaimer" style="display: none">
+    <div class="cookie-notice-block">
+        <div>
+            <div class="cookie-notice bottom">
+                <div>
+                    <div class="cookie-notice-text-wrap">
+                        <div class="cookie-icon">
+                            <img src="https://wapshop.gameloft.com/assets/5.1/images/Sp/ico/cookie.svg">
+                        </div>
+                        <div>
+                            We use essential technical cookies provided by us and our partners to ensure the proper functioning of our website and to deliver our services.                        </div>
+                        <a href="#close" class="close-icon">
+                            <img src="https://wapshop.gameloft.com/assets/5.1/images/Sp/ico/close-icon_white.svg">
+                        </a>
+                    </div>
+
+                    <div class="buttons">
+                        <a 
+                                                        onclick="document.querySelectorAll('.cookie-notice-more-block')[0].style.display = 'block';"
+                                                    >Learn more</a>
+                        <a href="#close" class="highlight-button">Got it</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="cookie-notice-more-block" style="display: none;">
+        <div>
+            <div class="cookie-notice-more">
+                <div class="gl-el-header">
+                    <div>
+                        <img src="https://wapshop.gameloft.com/assets/5.1/images/Sp/ico/cookie.svg" class="cookie-icon" alt="Cookie">
+
+                        Cookies Policy                    </div>
+                </div>
+
+                <div class="gl-el-body">
+                    <h3>Welcome to Gameloft</h3>
+
+                    <div>
+                        We use essential technical cookies provided by us and our partners to ensure the proper functioning of our website and to deliver our services.<br>To learn more about cookies, partners, and how we use your data, and to review your options or these operations for each partner, visit our <a href="https://www.gameloft.com/en/legal/showcase-cookie-policy/"><b>Cookies Policy</b></a>.                    </div>
+
+                    <div>
+                                                                        <ul>
+                                                                                            <li>Cloudflare</li>
+                                                                                                                            <li>Google</li>
+                                                                                                                            <li>Hotjar</li>
+                                                                                    </ul>
+                                            </div>
+                </div>
+                
+                <div class="gl-el-footer">
+                    <a href="#close">
+                        CLOSE                    </a>
+                </div>
+                            </div>
+        </div>
+    </div>
+</div><header class='header-fixed blue-color primary-color'>
+    <div class='header-main'>
+        <div>
+            <div class='logo'>
+                <a href="https://store.gameloft.com/index.php?phoneId=1402&amp;sv=128jrz4efabu5sjprnb4toc82&amp;c=73&amp;lan=2">
+                                            <svg width="2.6rem" height="1.84rem" viewBox="0 0 31 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="Assets" transform="translate(-671, -1449)" fill="currentColor"><path d="M683.125889,1449.01365 C686.81664,1448.99039 690.50969,1448.97411 694.197324,1449.16519 C695.301825,1449.23098 696.416172,1449.3556 697.466852,1449.72313 C698.568892,1450.14699 699.546059,1450.92907 700.153855,1451.9579 C700.720956,1452.92042 701.095085,1453.99859 701.246049,1455.109 C701.427863,1456.24798 701.366657,1457.40508 701.380276,1458.5542 C701.391435,1460.16107 701.400624,1461.76844 701.4,1463.37564 C701.34434,1465.25567 701.046842,1467.24752 699.926259,1468.80305 C699.380326,1469.5112 698.646836,1470.0841 697.833597,1470.44099 C697.435346,1470.64952 697.035947,1470.3516 696.773564,1470.06665 C696.716789,1469.89568 696.914027,1469.78419 697.008051,1469.67087 C697.969137,1468.80471 698.588747,1467.5888 698.826844,1466.3164 C699.05444,1465.07888 699.092673,1463.81728 699.10137,1462.56182 C699.061168,1460.8855 699.024739,1459.20286 698.792877,1457.53966 C698.674075,1456.66004 698.423015,1455.77511 697.904157,1455.04819 C697.396949,1454.39504 696.734675,1453.82214 695.926359,1453.60614 C695.343833,1453.43384 694.732919,1453.49964 694.135461,1453.45826 C689.869732,1453.33797 685.600721,1453.23844 681.333186,1453.33548 C680.028329,1453.43384 678.691801,1453.17647 677.411721,1453.5209 C676.239778,1453.80021 675.529261,1455.02443 675.414232,1456.17022 C675.294281,1457.85917 675.353683,1459.55361 675.317746,1461.24489 C675.317746,1462.36692 675.478064,1463.58317 676.255859,1464.44534 C676.706783,1465.08403 677.466692,1465.42581 678.233001,1465.43279 C682.352852,1465.6463 686.482714,1465.58549 690.608145,1465.62187 C691.172128,1465.59313 691.752685,1465.68817 692.303705,1465.53298 C692.932669,1465.2668 693.272831,1464.54171 693.269057,1463.87743 C693.275292,1463.23175 693.324191,1462.56564 693.13926,1461.93941 C693.030959,1461.57171 692.634022,1461.39144 692.277778,1461.4127 C688.073747,1461.49927 683.868568,1461.54479 679.664045,1461.61558 C678.931211,1461.58484 678.151939,1461.90684 677.79947,1462.58874 C677.275689,1462.52543 676.738289,1462.4942 676.230589,1462.34632 C676.147066,1460.87985 676.109325,1459.4064 676.15445,1457.93743 C676.219431,1456.67001 677.363478,1455.62424 678.605325,1455.63122 C683.512325,1455.49713 688.425068,1455.43699 693.332888,1455.57722 C694.630854,1455.66744 696.061242,1455.96486 696.943727,1457.02126 C697.627662,1457.76713 698.016067,1458.74444 698.132244,1459.74818 C698.305525,1461.22246 698.227581,1462.7102 698.240545,1464.19046 C698.199029,1465.19486 698.191645,1466.22684 697.82129,1467.17558 C697.249759,1468.83296 695.717962,1470.03342 694.033396,1470.34529 C693.251663,1470.49865 692.453356,1470.47489 691.661942,1470.50795 C685.972388,1470.65716 680.270036,1470.66081 674.591148,1470.2456 C673.459407,1470.21802 672.481092,1469.47099 671.951076,1468.49118 C671.280761,1467.26181 671.159005,1465.82109 671.098947,1464.44401 C671.091563,1461.25004 671.011158,1458.05507 671,1454.86027 C671.045125,1453.70749 671.187393,1452.49324 671.842283,1451.5146 C672.521951,1450.40436 673.729666,1449.74622 674.960355,1449.46709 C677.664587,1449.08992 680.402294,1449.1057 683.125889,1449.01365"></path></g></g></svg>                                    </a>
+            </div>
+
+            <div class='title'>
+                <a href="https://store.gameloft.com/index.php?phoneId=1402&amp;sv=128jrz4efabu5sjprnb4toc82&amp;c=73&amp;lan=2">
+                                            <svg width="15.25rem" height="1.25rem" viewBox="0 0 183 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>images/SVG/logo-black_text</title>
+    <g id="UI-Elements" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Assets" transform="translate(-708, -1401)">
+            <g id="logo-black_text" transform="translate(708.6001, 1401.4363)">
+                <path d="M182.062996,10.6329165 L174.246488,10.692262 C173.094254,10.0935711 173.373638,8.10244376 174.836397,8.12426194 L181.239971,8.12775285 L181.238192,5.50084372 L174.91514,5.52789826 C173.387429,5.67975281 173.365185,3.60920733 174.148615,2.79844368 C176.75649,2.67538913 179.371039,2.83728004 181.980693,2.86913459 L181.9758,0.0589527282 L171.847706,0.123098184 C170.940599,0.250952731 170.219007,1.14986184 170.26394,2.04833458 C170.26216,5.42491644 170.256822,8.80193468 170.26483,12.1789529 C170.217228,13.0150256 171.057602,13.615462 171.851265,13.5853529 L182.093692,13.6595347 C182.111043,12.6157529 182.03052,11.6749529 182.062996,10.6329165" id="Fill-15" fill="currentColor"></path>
+                <path d="M141.112505,0.000174545457 L128.357851,0.070429092 L118.442409,0.134574547 C117.535302,0.262429095 116.813265,1.15872002 116.857753,2.05501094 C116.857753,2.05501094 116.859088,5.06112008 116.859088,6.06388373 C116.859088,7.06621101 117.625613,8.0685383 118.647942,8.0685383 C119.670272,8.0685383 121.430655,8.11610194 121.430655,8.11610194 L124.525226,8.09079285 C126.058276,8.09079285 126.277156,10.5217747 124.780586,10.8477383 C122.481012,11.3491202 120.692157,11.3491202 116.855802,10.6011929 L116.859088,13.8555929 C119.670272,13.6051202 126.988961,13.5915929 126.988961,13.5915929 C127.896067,13.4637384 128.61766,12.5674475 128.573172,11.6711565 C128.573172,11.6711565 128.572282,8.6650474 128.572282,7.66272011 C128.572282,6.65995646 127.805312,5.65719281 126.783427,5.65719281 C125.761098,5.65719281 124.000715,5.61006554 124.000715,5.61006554 L120.947962,5.58432008 C119.414912,5.58432008 119.117734,2.87799277 120.650783,2.87799277 C121.455568,2.87799277 122.233659,2.87493822 122.99796,2.87188368 L122.983279,2.87930186 C125.956844,2.8740655 128.418799,2.88759277 131.328302,2.85748368 L131.424395,13.655302 L134.901117,13.6574838 L134.923361,3.05777459 L139.345449,3.07435641 C139.583904,1.44322911 140.930105,0.088756365 141.112505,0.000174545457" id="Fill-17" fill="currentColor"></path>
+                <path d="M150.857247,9.45809469 C150.802527,10.2400583 150.02577,10.7322765 149.29706,10.8151856 C148.21823,10.9469674 147.126055,10.854022 146.042777,10.8658038 C145.019112,10.9386765 144.214773,9.89969469 144.241021,8.94885832 C144.218332,7.42464011 144.292182,5.89867645 144.346902,4.37402188 C144.310866,3.6788946 144.886983,3.12733096 145.485789,2.86507641 C146.690964,2.72631277 147.921942,2.84805822 149.139573,2.80573095 C150.101399,2.77562186 150.944443,3.58551278 150.898621,4.54856734 C150.88127,6.18449464 150.972026,7.82391284 150.857247,9.45809469 M152.402308,0.469440007 C151.531237,-0.0891054559 150.454632,0.0919854559 149.47679,0.0701672738 C147.673255,0.0989672742 145.864381,0.0108218183 144.063959,0.113803638 C142.306691,0.281367277 140.816794,1.78027639 140.743389,3.53140369 C140.66598,5.56354917 140.766968,7.60224011 140.743389,9.63394923 C140.936911,11.3074038 141.804423,13.5577311 143.801926,13.6388947 C146.149103,13.6166402 148.501618,13.7754766 150.847015,13.6554766 C152.751983,13.6031129 154.281029,11.7847856 154.390913,9.9607856 C154.461649,8.15860376 154.394472,6.35380373 154.425614,4.54987643 C154.474995,2.98682186 153.775647,1.3168582 152.402308,0.469440007" id="Fill-19" fill="currentColor"></path>
+                <path d="M164.132364,5.72683645 L164.046947,5.72814554 L160.86073,5.74516372 C159.333464,5.897891 159.276965,2.75170913 160.554654,2.75170913 C162.593086,2.75345459 162.437378,2.7281455 164.133698,2.74516368 L163.876559,2.75389095 C163.876559,2.75389095 165.154249,2.75389095 165.154249,4.01541824 C165.154249,5.52960008 164.132364,5.72683645 164.132364,5.72683645 M168.220348,4.52029098 C168.220348,-0.0100363638 164.662658,0.0091636365 164.643973,0.00960000014 L164.643084,0 L158.049101,0.0645818191 C157.141995,0.193309094 156.420403,1.09570911 156.465335,1.99810912 C156.463111,5.89440009 156.459552,10.7179638 156.467115,13.6049457 L160.299294,13.6049457 C160.043934,12.0907638 160.043934,10.5290183 160.043934,8.55796376 L161.832344,8.55796376 C161.832344,8.55796376 162.599314,8.81018195 163.604738,11.200582 C164.443778,13.1938911 164.643084,13.6049457 164.643084,13.6049457 L168.220348,13.6049457 C168.220348,13.6049457 166.437722,10.3474911 166.176578,9.31505468 C165.954584,8.4375274 166.310932,7.94225466 166.407915,7.82705466 C167.347497,7.26327284 168.220348,6.26923646 168.220348,4.52029098" id="Fill-21" fill="currentColor"></path>
+                <path d="M20.0487736,8.25787649 C21.0555327,8.25264012 22.0618468,8.2613674 23.068161,8.25787649 C22.8590683,6.64987646 22.1459288,5.08114917 21.5698117,3.55387642 C20.9883561,5.0759128 20.1875756,6.64682192 20.0487736,8.25787649 M19.4197161,0.518530917 C20.3437278,-0.164378184 21.6681297,0.0642763646 22.7647542,0.158530911 C23.440079,0.216567276 23.7590566,0.6123491 23.9512439,1.11373093 L29.1225064,13.6762038 L25.0852381,13.6762038 C24.8387757,12.7511129 24.5700693,11.6514765 24.2377454,10.7516947 C22.5142878,10.7804947 20.7912751,10.7599856 19.0664829,10.7486402 L18.0908653,13.6762038 L14.2569062,13.6762038 C16.0422019,9.32042196 17.6535502,4.8791128 19.4197161,0.518530917" id="Fill-1" fill="#031220"></path>
+                <path d="M92.8471505,1.59307639 C92.8249066,0.708567283 93.7747213,0.15002182 94.592852,0.178821821 L112.693161,0.200640003 C113.937929,0.6195491 114.699116,1.90420366 115.039003,3.09460368 L108.859646,3.07802186 L108.836958,13.6781675 L105.422074,13.6759857 L105.32598,2.87773095 C102.354639,2.90827641 99.3815194,2.89474913 96.4083994,2.8999855 C95.8803291,3.13213096 95.789574,5.80791281 97.0054257,5.88820372 L100.458124,5.82929463 L100.458124,8.14158558 C99.4242277,8.04602194 98.3854374,8.06260376 97.3497613,8.07438557 C96.752735,8.02900376 96.2233301,8.58929467 96.2522472,9.16093105 L96.2780501,13.6759857 L92.8560481,13.6759857 C92.8814061,9.68500378 92.8164539,5.58536736 92.8471505,1.59307639" id="Fill-3" fill="#031220"></path>
+                <path d="M81.3476756,2.95012368 C80.7493146,3.21106914 80.1731975,3.75914187 80.2092327,4.45034188 C80.1540678,5.96539645 80.0806629,7.48263284 80.1029068,8.99768741 C80.0775488,9.94285106 80.8814434,10.9757238 81.9051078,10.9032874 C82.9883859,10.8915056 84.0810064,10.9840147 85.1589459,10.8526693 C85.888101,10.7701965 86.6644133,10.2810329 86.7195781,9.50386923 C86.8343567,7.87928739 86.7436015,6.24990555 86.7605069,4.62357825 C86.8067742,3.66663278 85.9632854,2.8611055 85.0014591,2.89121459 C83.7842727,2.93354186 82.5532951,2.81223277 81.3476756,2.95012368 M79.9267351,0.21543273 C81.7267117,0.113323638 83.5355859,0.200596367 85.3395664,0.171796366 C86.3165186,0.194050912 87.3935684,0.0138327275 88.2641947,0.568887281 C89.6379782,1.41150548 90.3373265,3.07143277 90.2875001,4.62532371 C90.2563587,6.41790555 90.3235353,8.21266921 90.2532445,10.0035056 C90.1433596,11.8161602 88.6138689,13.6240147 86.7093459,13.675942 C84.363504,13.7955057 82.0114337,13.637542 79.6642571,13.6593602 C77.6667546,13.5786329 76.7987975,11.3422693 76.6052755,9.67885105 C76.6297438,7.65936011 76.5283116,5.63245099 76.6052755,3.61296005 C76.6791253,1.87230548 78.168577,0.382123642 79.9267351,0.21543273" id="Fill-5" fill="#031220"></path>
+                <path d="M65.5636246,0.254400004 C66.7038471,0.0510545462 67.9023486,0.276218186 69.0612559,0.121309093 C69.123094,3.30850914 69.0612559,6.49876373 69.0906179,9.68727287 C69.0870588,10.3396365 69.7557106,10.9082183 70.4154647,10.797382 C71.7839096,10.7367274 73.1554687,10.830982 74.518575,10.6978911 C74.9781341,11.7778911 75.3006706,12.4045093 76.258938,13.6760729 L66.5939622,13.6760729 C65.8701456,13.667782 65.5329281,12.8238547 65.5961007,12.2046547 C65.5943212,8.22065467 65.5396012,4.23665461 65.5636246,0.254400004" id="Fill-7" fill="#031220"></path>
+                <path d="M51.1869899,2.09764367 C51.1425021,1.20135275 51.8640943,0.305061823 52.7712007,0.177207275 L62.8992945,0.11306182 L62.9041881,2.91669823 C60.2949783,2.88484368 57.6799851,2.72338913 55.07211,2.84600732 C54.2886797,3.65502551 54.3109236,5.71989827 55.8386348,5.56891645 L62.1616866,5.5418619 L62.1634662,8.16178921 L55.7594465,8.15873467 C54.2971324,8.13648012 54.017749,10.1228074 55.1699831,10.7197529 L62.9864906,10.6612802 C62.9540145,11.700262 63.0345374,12.6388802 63.0171871,13.6796075 L52.7747597,13.605862 C51.9806523,13.6359711 51.1407226,13.0372802 51.1887694,12.2033893 C51.1798718,8.83466195 51.1852104,5.46593463 51.1869899,2.09764367" id="Fill-9" fill="#031220"></path>
+                <path d="M30.8472987,1.92781094 C30.8646489,-0.314661823 34.5157631,-0.330807278 35.0202548,0.683301828 C36.4758958,2.90002913 37.9524461,5.10628371 39.4200988,7.31428375 C39.6412032,7.63719284 40.0407037,7.33959284 40.1777261,7.09086556 C41.5101359,4.98192007 42.8318686,2.86119277 44.1883018,0.765774557 C44.6340696,0.0113018184 48.6940267,-0.76586183 48.5685711,2.10235639 L48.510737,13.6760293 L45.0731642,13.6760293 L44.9788501,4.81872007 L39.7252851,13.8344293 L34.4872909,5.14512008 L34.4428031,13.6760293 L30.7907992,13.6760293 C30.8401806,9.79282924 30.7560987,5.81057463 30.8472987,1.92781094" id="Fill-11" fill="#031220"></path>
+                <path d="M3.5583008,0.213905458 C6.58792035,0.0960872742 9.62955162,0.291578186 12.6573917,0.113105456 C12.6711829,1.09666911 12.6987653,2.08066912 12.6471595,3.06466914 C10.7288453,2.95906914 4.14020129,2.36736004 3.76561397,4.17128733 C3.56452909,5.13957826 3.41549494,9.16503286 4.00406861,9.90946924 C4.77148325,10.879942 9.18912234,11.3490329 9.194016,9.90772378 C9.24028332,8.77230559 9.49386381,7.56663284 8.68329599,6.62146919 C10.0926697,6.56430555 11.5051575,6.60488737 12.9145312,6.57259646 C13.1138365,8.21245103 12.9523458,9.88066924 13.0021722,11.5318693 C13.0533331,12.4840147 12.3846814,13.788742 11.2738209,13.6761602 L4.06768617,13.6761602 C2.96661298,13.7097602 1.89000809,13.1451057 1.14750661,12.3644511 C0.206144649,11.244742 -0.0269714524,9.73623287 0.00239049923,8.32677831 C0.0539963537,6.70394192 -0.0269714524,5.07936008 0.0415397681,3.45826914 C0.142971965,1.68881457 1.80948516,0.318196368 3.5583008,0.213905458" id="Fill-13" fill="#031220"></path>
+            </g>
+        </g>
+    </g>
+</svg>                                    </a>
+            </div>
+
+                            <div id='header-languages'>
+                    <a class="xl-large-text white-color" href="#language-switcher-popup">
+                       <strong>EN</strong>
+                    </a>
+                </div>
+                <div class='delimiter'></div>
+            
+            <div id="header-search">
+                <a href="#search-popup">
+                                            <svg width="1.43rem" height="1.43rem" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>images/SVG/search-header</title>
+    <g id="UI-Elements" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Assets" transform="translate(-500, -5005)" fill="currentColor">
+            <g id="search" transform="translate(500, 5005)">
+                <path d="M9.35,0 C14.5138624,0 18.7,4.18613759 18.7,9.35 C18.7,11.5358132 17.9499499,13.5464429 16.6931852,15.1385535 L21.6778175,20.1221825 C22.1073942,20.5517593 22.1073942,21.2482407 21.6778175,21.6778175 C21.2812851,22.0743498 20.6573309,22.1048523 20.2258106,21.7693249 L20.1221825,21.6778175 L15.1385535,16.6931852 C13.5464429,17.9499499 11.5358132,18.7 9.35,18.7 C4.18613759,18.7 0,14.5138624 0,9.35 C0,4.18613759 4.18613759,0 9.35,0 Z M9.35,2.2 C5.40116404,2.2 2.2,5.40116404 2.2,9.35 C2.2,13.298836 5.40116404,16.5 9.35,16.5 C11.3013565,16.5 13.070136,15.7182948 14.3602733,14.4509496 C14.3720464,14.433207 14.3868405,14.4175246 14.4021825,14.4021825 L14.449962,14.3612785 C15.7178887,13.0710548 16.5,11.3018633 16.5,9.35 C16.5,5.40116404 13.298836,2.2 9.35,2.2 Z" id="Combined-Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>                                    </a>
+            </div>
+
+            <div id="header-close" class="hide">
+                                    <svg width="1.43rem" height="1.43rem" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>images/SVG/close-icon_white</title>
+    <g id="UI-Elements" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Assets" transform="translate(-970, -4871)">
+            <g id="close-icon_white" transform="translate(970, 4871)">
+                <rect id="Rectangle" fill="#D8D8D8" opacity="0" x="0" y="0" width="22" height="22"></rect>
+                <g id="icons/ic_close" transform="translate(4, 4)" fill="currentColor">
+                    <path d="M13.6487908,0.351209155 C14.0328301,0.735248408 14.108914,1.29220283 13.842417,1.64521513 L13.7748206,1.7228877 L8.388,7.109 L13.5565509,12.2771123 C13.9005273,12.6210887 13.8441019,13.2352101 13.4305211,13.6487908 C13.0464819,14.0328301 12.4895275,14.108914 12.1365152,13.842417 L12.0588426,13.7748206 L6.89,8.606 L1.94115739,13.5565509 C1.59718099,13.9005273 0.983059585,13.8441019 0.56947885,13.4305211 C0.185439597,13.0464819 0.109355661,12.4895275 0.375852677,12.1365152 L0.443449068,12.0588426 L5.393,7.109 L0.225179373,1.94115739 C-0.118797035,1.59718099 -0.062371579,0.983059585 0.351209155,0.56947885 C0.735248408,0.185439597 1.29220283,0.109355661 1.64521513,0.375852677 L1.7228877,0.443449068 L6.89,5.611 L12.2771123,0.225179373 C12.6210887,-0.118797035 13.2352101,-0.062371579 13.6487908,0.351209155 Z" id="Combined-Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>                            </div>
+        </div>
+    </div>
+
+    </header>
+<div id="language-switcher-popup" class="mfp-hide popup-page">
+    <div class="page-section page-title">
+        <h2>Select Language</h2>
+    </div>
+
+    <hr/>
+    <ul>
+                <a href="https://store.gameloft.com/index.php?phoneId=1402&amp;lan=1&amp;sv=128jrz4efabu5sjprnb4toc82&amp;c=73">
+            <li class="list-block" data-gl-language-iso="fr">
+                <div>
+                    <div>
+                        <div class="x-large-text"><strong>FR</strong></div>
+                    </div>
+                    <div class="info x-large-text">
+                        <div><strong>Français</strong></div>
+                        <div class="medium-text gray-color">French</div>
+                    </div>
+                    <div>
+                                            </div>
+                </div>
+            </li>
+        </a>
+        <hr/>
+                <a href="https://store.gameloft.com/index.php?phoneId=1402&amp;lan=2&amp;sv=128jrz4efabu5sjprnb4toc82&amp;c=73">
+            <li class="list-block" data-gl-language-iso="en">
+                <div>
+                    <div>
+                        <div class="x-large-text"><strong>EN</strong></div>
+                    </div>
+                    <div class="info x-large-text">
+                        <div><strong>English</strong></div>
+                        <div class="medium-text gray-color">English</div>
+                    </div>
+                    <div>
+                                                <img src="https://wapshop.gameloft.com/assets/5.1/images/Sp/ico/check-icon.png" alt=""/>
+                                            </div>
+                </div>
+            </li>
+        </a>
+        <hr/>
+                <a href="https://store.gameloft.com/index.php?phoneId=1402&amp;lan=3&amp;sv=128jrz4efabu5sjprnb4toc82&amp;c=73">
+            <li class="list-block" data-gl-language-iso="de">
+                <div>
+                    <div>
+                        <div class="x-large-text"><strong>DE</strong></div>
+                    </div>
+                    <div class="info x-large-text">
+                        <div><strong>Deutsch</strong></div>
+                        <div class="medium-text gray-color">German</div>
+                    </div>
+                    <div>
+                                            </div>
+                </div>
+            </li>
+        </a>
+        <hr/>
+                <a href="https://store.gameloft.com/index.php?phoneId=1402&amp;lan=4&amp;sv=128jrz4efabu5sjprnb4toc82&amp;c=73">
+            <li class="list-block" data-gl-language-iso="es">
+                <div>
+                    <div>
+                        <div class="x-large-text"><strong>ES</strong></div>
+                    </div>
+                    <div class="info x-large-text">
+                        <div><strong>Español (UE)</strong></div>
+                        <div class="medium-text gray-color">Castilian Spanish</div>
+                    </div>
+                    <div>
+                                            </div>
+                </div>
+            </li>
+        </a>
+        <hr/>
+                <a href="https://store.gameloft.com/index.php?phoneId=1402&amp;lan=5&amp;sv=128jrz4efabu5sjprnb4toc82&amp;c=73">
+            <li class="list-block" data-gl-language-iso="it">
+                <div>
+                    <div>
+                        <div class="x-large-text"><strong>IT</strong></div>
+                    </div>
+                    <div class="info x-large-text">
+                        <div><strong>Italiano</strong></div>
+                        <div class="medium-text gray-color">Italian</div>
+                    </div>
+                    <div>
+                                            </div>
+                </div>
+            </li>
+        </a>
+        <hr/>
+                <a href="https://store.gameloft.com/index.php?phoneId=1402&amp;lan=12&amp;sv=128jrz4efabu5sjprnb4toc82&amp;c=73">
+            <li class="list-block" data-gl-language-iso="br">
+                <div>
+                    <div>
+                        <div class="x-large-text"><strong>PT</strong></div>
+                    </div>
+                    <div class="info x-large-text">
+                        <div><strong>Português brasileiro</strong></div>
+                        <div class="medium-text gray-color">Brazilian Portuguese</div>
+                    </div>
+                    <div>
+                                            </div>
+                </div>
+            </li>
+        </a>
+        <hr/>
+                <a href="https://store.gameloft.com/index.php?phoneId=1402&amp;lan=84&amp;sv=128jrz4efabu5sjprnb4toc82&amp;c=73">
+            <li class="list-block" data-gl-language-iso="ar">
+                <div>
+                    <div>
+                        <div class="x-large-text"><strong>AR</strong></div>
+                    </div>
+                    <div class="info x-large-text">
+                        <div><strong>العربية</strong></div>
+                        <div class="medium-text gray-color">Arabic</div>
+                    </div>
+                    <div>
+                                            </div>
+                </div>
+            </li>
+        </a>
+        <hr/>
+                <a href="https://store.gameloft.com/index.php?phoneId=1402&amp;lan=10&amp;sv=128jrz4efabu5sjprnb4toc82&amp;c=73">
+            <li class="list-block" data-gl-language-iso="ru">
+                <div>
+                    <div>
+                        <div class="x-large-text"><strong>RU</strong></div>
+                    </div>
+                    <div class="info x-large-text">
+                        <div><strong>Русский</strong></div>
+                        <div class="medium-text gray-color">Russian</div>
+                    </div>
+                    <div>
+                                            </div>
+                </div>
+            </li>
+        </a>
+        <hr/>
+                <a href="https://store.gameloft.com/index.php?phoneId=1402&amp;lan=17&amp;sv=128jrz4efabu5sjprnb4toc82&amp;c=73">
+            <li class="list-block" data-gl-language-iso="ko">
+                <div>
+                    <div>
+                        <div class="x-large-text"><strong>KO</strong></div>
+                    </div>
+                    <div class="info x-large-text">
+                        <div><strong>한국어</strong></div>
+                        <div class="medium-text gray-color">Korean</div>
+                    </div>
+                    <div>
+                                            </div>
+                </div>
+            </li>
+        </a>
+        <hr/>
+                <a href="https://store.gameloft.com/index.php?phoneId=1402&amp;lan=19&amp;sv=128jrz4efabu5sjprnb4toc82&amp;c=73">
+            <li class="list-block" data-gl-language-iso="my">
+                <div>
+                    <div>
+                        <div class="x-large-text"><strong>MY</strong></div>
+                    </div>
+                    <div class="info x-large-text">
+                        <div><strong>မြန်မာဘာသာ</strong></div>
+                        <div class="medium-text gray-color">Burmese</div>
+                    </div>
+                    <div>
+                                            </div>
+                </div>
+            </li>
+        </a>
+        <hr/>
+                <a href="https://store.gameloft.com/index.php?phoneId=1402&amp;lan=49&amp;sv=128jrz4efabu5sjprnb4toc82&amp;c=73">
+            <li class="list-block" data-gl-language-iso="le">
+                <div>
+                    <div>
+                        <div class="x-large-text"><strong>ES</strong></div>
+                    </div>
+                    <div class="info x-large-text">
+                        <div><strong>Español (LATAM)</strong></div>
+                        <div class="medium-text gray-color">Latin American Spanish</div>
+                    </div>
+                    <div>
+                                            </div>
+                </div>
+            </li>
+        </a>
+        <hr/>
+                <a href="https://store.gameloft.com/index.php?phoneId=1402&amp;lan=67&amp;sv=128jrz4efabu5sjprnb4toc82&amp;c=73">
+            <li class="list-block" data-gl-language-iso="zh">
+                <div>
+                    <div>
+                        <div class="x-large-text"><strong>ZH</strong></div>
+                    </div>
+                    <div class="info x-large-text">
+                        <div><strong>简体中文</strong></div>
+                        <div class="medium-text gray-color">Chinese</div>
+                    </div>
+                    <div>
+                                            </div>
+                </div>
+            </li>
+        </a>
+        <hr/>
+                <a href="https://store.gameloft.com/index.php?phoneId=1402&amp;lan=72&amp;sv=128jrz4efabu5sjprnb4toc82&amp;c=73">
+            <li class="list-block" data-gl-language-iso="th">
+                <div>
+                    <div>
+                        <div class="x-large-text"><strong>TH</strong></div>
+                    </div>
+                    <div class="info x-large-text">
+                        <div><strong>ไทย</strong></div>
+                        <div class="medium-text gray-color">Thai</div>
+                    </div>
+                    <div>
+                                            </div>
+                </div>
+            </li>
+        </a>
+        <hr/>
+                <a href="https://store.gameloft.com/index.php?phoneId=1402&amp;lan=76&amp;sv=128jrz4efabu5sjprnb4toc82&amp;c=73">
+            <li class="list-block" data-gl-language-iso="tr">
+                <div>
+                    <div>
+                        <div class="x-large-text"><strong>TR</strong></div>
+                    </div>
+                    <div class="info x-large-text">
+                        <div><strong>Türkçe</strong></div>
+                        <div class="medium-text gray-color">Turkish</div>
+                    </div>
+                    <div>
+                                            </div>
+                </div>
+            </li>
+        </a>
+        <hr/>
+                <a href="https://store.gameloft.com/index.php?phoneId=1402&amp;lan=80&amp;sv=128jrz4efabu5sjprnb4toc82&amp;c=73">
+            <li class="list-block" data-gl-language-iso="vi">
+                <div>
+                    <div>
+                        <div class="x-large-text"><strong>VI</strong></div>
+                    </div>
+                    <div class="info x-large-text">
+                        <div><strong>Việt Nam</strong></div>
+                        <div class="medium-text gray-color">Vietnamese</div>
+                    </div>
+                    <div>
+                                            </div>
+                </div>
+            </li>
+        </a>
+        <hr/>
+            </ul>
+</div>
+<div id="search-popup" class="mfp-hide popup-page">
+    <div id="search-input">
+        <div>
+            <input class="xxl-large-text bold-text" style="line-height: 200%;" type="search"
+                   placeholder="Search"/>
+        </div>
+        <div class="cancel xxl-large-text bold-text"  style="line-height: 200%;">
+            <img src="https://wapshop.gameloft.com/assets/5.1/images/Sp/ico/cancel.png"/>
+        </div>
+        <hr>
+    </div>
+    <div id="search_error"></div>
+
+            <ul id="search-gamelist" class="gameslist"></ul>
+    
+        <div id="search-data-div" style="display: none" data-minserchstart="2"></div>
+</div>
+<div id="add-to-bookmarks-popup" class="mfp-hide popup-notification" >
+    <div>
+        <ul class="list-image-block">
+            <li>
+                <div class="icon">
+                    <img src="https://wapshop.gameloft.com/assets/5.1/images/Sp/ico/bookmark.png" alt="">
+                </div>
+                <div class="title">
+                    <div class="xl-large-text"><strong>Bookmark "Gameloft Store"</strong></div>
+                </div>
+            </li>
+        </ul>
+        <div class="gray-color">Add the "Gameloft Store" to your browser bookmarks for easy access</div>
+    </div>
+    <hr>
+    <div>
+        <a href="#add-to-bookmarks">
+            <div class="button-minimal button-full blue-color">ADD TO BOOKMARKS</div>
+        </a>
+    </div>
+</div>
+<div id="add-to-homescreen-popup" class="mfp-hide popup-notification" >
+    <div>
+        <ul class="list-image-block">
+            <li>
+                <div class="icon-dynamic">
+                    <img src="https://wapshop.gameloft.com/assets/5.1/images/Sp/ico/homescreen.png" alt="">
+                </div>
+                <div class="title">
+                    <div class="xl-large-text"><strong>Add Gameloft Store to Home Screen</strong></div>
+                </div>
+            </li>
+        </ul>
+        <div class="gray-color">Add the Gameloft Store to your phone's Home screen for easy access</div>
+    </div>
+    <hr>
+    <div>
+        <a href="#add-to-homescreen">
+            <div class="button-minimal button-full blue-color">ADD TO HOME SCREEN</div>
+        </a>
+    </div>
+</div>
+<section>
+    <h4>TRENDING VIDEOS</h4>
+                    <style>
+            li.recommended-bar-medium > .medium-thumbnail {
+                position: relative;
+            }
+
+            li.recommended-bar-medium > .medium-thumbnail::before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                z-index: 3;
+                display: block;
+                width: 2.5em;
+                height: 2.5em;
+                margin: -1.25em 0 0 -1.25em;
+                background: transparent url("https://wapshop.gameloft.com/assets/5.1/images/Sp/ico/play_video.svg") no-repeat scroll center center / 2.5em 2.5em;
+            }
+        </style>
+        
+        <ul class='slider' >
+                        <a href="https://store.gameloft.com/video.php?phoneId=1402&amp;section=trending_videos&amp;video=9288&amp;sv=128jrz4efabu5sjprnb4toc82&amp;c=73&amp;lan=2" onclick="dataLayer.push({
+                'event': 'eeListClick',
+                'list': 'TRENDING VIDEOS',
+                'products': [{
+                    'category': '-',
+                    'name': 'Tom & Jerry - O-Solar-Meow (s1e1)'
+                }]
+            });">
+                <li class="recommended-bar-medium">
+                    <div class="medium-thumbnail">
+                                            <img class="medium-thumbnail covered-thumbnail" src="https://media01.gameloft.com/contents/9288/default/episodeCover.jpg" alt="Tom & Jerry - O-Solar-Meow (s1e1)">
+                                        </div>
+                    <div class="medium-thumbnail-description blue-background">
+                        <div class="medium-thumbnail-name medium-text">Tom & Jerry - O-Solar-Meow (s1e1)</div>
+                    </div>
+                </li>
+            </a>
+                        <a href="https://store.gameloft.com/video.php?phoneId=1402&amp;section=trending_videos&amp;video=9290&amp;sv=128jrz4efabu5sjprnb4toc82&amp;c=73&amp;lan=2" onclick="dataLayer.push({
+                'event': 'eeListClick',
+                'list': 'TRENDING VIDEOS',
+                'products': [{
+                    'category': '-',
+                    'name': 'Tom & Jerry - Guided Mouse-Ille (s1e2)'
+                }]
+            });">
+                <li class="recommended-bar-medium">
+                    <div class="medium-thumbnail">
+                                            <img class="medium-thumbnail covered-thumbnail" src="https://media01.gameloft.com/contents/9290/default/episodeCover.jpg" alt="Tom & Jerry - Guided Mouse-Ille (s1e2)">
+                                        </div>
+                    <div class="medium-thumbnail-description blue-background">
+                        <div class="medium-thumbnail-name medium-text">Tom & Jerry - Guided Mouse-Ille (s1e2)</div>
+                    </div>
+                </li>
+            </a>
+                        <a href="https://store.gameloft.com/video.php?phoneId=1402&amp;section=trending_videos&amp;video=9334&amp;sv=128jrz4efabu5sjprnb4toc82&amp;c=73&amp;lan=2" onclick="dataLayer.push({
+                'event': 'eeListClick',
+                'list': 'TRENDING VIDEOS',
+                'products': [{
+                    'category': '-',
+                    'name': 'Tom & Jerry - Advance and Be Mechanized (s1e3)'
+                }]
+            });">
+                <li class="recommended-bar-medium">
+                    <div class="medium-thumbnail">
+                                            <img class="medium-thumbnail covered-thumbnail" src="https://media01.gameloft.com/contents/9334/default/episodeCover.jpg" alt="Tom & Jerry - Advance and Be Mechanized (s1e3)">
+                                        </div>
+                    <div class="medium-thumbnail-description blue-background">
+                        <div class="medium-thumbnail-name medium-text">Tom & Jerry - Advance and Be Mechanized (s1e3)</div>
+                    </div>
+                </li>
+            </a>
+                        <a href="https://store.gameloft.com/video.php?phoneId=1402&amp;section=trending_videos&amp;video=9336&amp;sv=128jrz4efabu5sjprnb4toc82&amp;c=73&amp;lan=2" onclick="dataLayer.push({
+                'event': 'eeListClick',
+                'list': 'TRENDING VIDEOS',
+                'products': [{
+                    'category': '-',
+                    'name': 'Tom & Jerry - The Cat Concerto (s1e4)'
+                }]
+            });">
+                <li class="recommended-bar-medium">
+                    <div class="medium-thumbnail">
+                                            <img class="medium-thumbnail covered-thumbnail" src="https://media01.gameloft.com/contents/9336/default/episodeCover.jpg" alt="Tom & Jerry - The Cat Concerto (s1e4)">
+                                        </div>
+                    <div class="medium-thumbnail-description blue-background">
+                        <div class="medium-thumbnail-name medium-text">Tom & Jerry - The Cat Concerto (s1e4)</div>
+                    </div>
+                </li>
+            </a>
+                        <a href="https://store.gameloft.com/video.php?phoneId=1402&amp;section=trending_videos&amp;video=9338&amp;sv=128jrz4efabu5sjprnb4toc82&amp;c=73&amp;lan=2" onclick="dataLayer.push({
+                'event': 'eeListClick',
+                'list': 'TRENDING VIDEOS',
+                'products': [{
+                    'category': '-',
+                    'name': 'Tom & Jerry - Cue Ball Cat (s1e5)'
+                }]
+            });">
+                <li class="recommended-bar-medium">
+                    <div class="medium-thumbnail">
+                                            <img class="medium-thumbnail covered-thumbnail" src="https://media01.gameloft.com/contents/9338/default/episodeCover.jpg" alt="Tom & Jerry - Cue Ball Cat (s1e5)">
+                                        </div>
+                    <div class="medium-thumbnail-description blue-background">
+                        <div class="medium-thumbnail-name medium-text">Tom & Jerry - Cue Ball Cat (s1e5)</div>
+                    </div>
+                </li>
+            </a>
+                    </ul>
+    </section>
+<section class="category-listing">
+    <h4>POPULAR CATEGORIES</h4>
+    <ul class="list-image-block">
+                                    <a href="https://store.gameloft.com/games.php?phoneId=1402&amp;cat%5B%5D=wap_gamers&amp;sv=128jrz4efabu5sjprnb4toc82&amp;c=73&amp;lan=2">
+                    <li data-gl-ent="category">
+                        <div>
+                                                            <img class='product-icon big hide' src="https://wapshop.gameloft.com/assets/5.1/images/Sp/placeholder/icon.png" data-gl-lazy-src="https://wapshop.gameloft.com/assets/5.1/images/Sp/ico/categories/action_arcade-icon.png" alt="">
+                                <noscript><img class='product-icon big' src="https://wapshop.gameloft.com/assets/5.1/images/Sp/ico/categories/action_arcade-icon.png" alt=""></noscript>
+                                                    </div>
+                        <div>
+                            <span class="x-large-text">
+                                <strong data-gl-ent-data="name">
+                                    Action & Arcade                                </strong>
+                            </span>
+                        </div>
+                    </li>
+                </a>
+                                                <a href="https://store.gameloft.com/games.php?phoneId=1402&amp;cat%5B%5D=wap_android3_paidcinemaandtv&amp;sv=128jrz4efabu5sjprnb4toc82&amp;c=73&amp;lan=2">
+                    <li data-gl-ent="category">
+                        <div>
+                                                            <img class='product-icon big hide' src="https://wapshop.gameloft.com/assets/5.1/images/Sp/placeholder/icon.png" data-gl-lazy-src="https://wapshop.gameloft.com/assets/5.1/images/Sp/ico/categories/cinema_tv-icon.png" alt="">
+                                <noscript><img class='product-icon big' src="https://wapshop.gameloft.com/assets/5.1/images/Sp/ico/categories/cinema_tv-icon.png" alt=""></noscript>
+                                                    </div>
+                        <div>
+                            <span class="x-large-text">
+                                <strong data-gl-ent-data="name">
+                                    TV Shows                                </strong>
+                            </span>
+                        </div>
+                    </li>
+                </a>
+                                                <a href="https://store.gameloft.com/games.php?phoneId=1402&amp;cat%5B%5D=wap_racing&amp;sv=128jrz4efabu5sjprnb4toc82&amp;c=73&amp;lan=2">
+                    <li data-gl-ent="category">
+                        <div>
+                                                            <img class='product-icon big hide' src="https://wapshop.gameloft.com/assets/5.1/images/Sp/placeholder/icon.png" data-gl-lazy-src="https://wapshop.gameloft.com/assets/5.1/images/Sp/ico/categories/racing-icon.png" alt="">
+                                <noscript><img class='product-icon big' src="https://wapshop.gameloft.com/assets/5.1/images/Sp/ico/categories/racing-icon.png" alt=""></noscript>
+                                                    </div>
+                        <div>
+                            <span class="x-large-text">
+                                <strong data-gl-ent-data="name">
+                                    Racing                                </strong>
+                            </span>
+                        </div>
+                    </li>
+                </a>
+                                                <a href="https://store.gameloft.com/games.php?phoneId=1402&amp;cat%5B%5D=wap_genre_sport&amp;sv=128jrz4efabu5sjprnb4toc82&amp;c=73&amp;lan=2">
+                    <li data-gl-ent="category">
+                        <div>
+                                                            <img class='product-icon big hide' src="https://wapshop.gameloft.com/assets/5.1/images/Sp/placeholder/icon.png" data-gl-lazy-src="https://wapshop.gameloft.com/assets/5.1/images/Sp/ico/categories/sports-icon.png" alt="">
+                                <noscript><img class='product-icon big' src="https://wapshop.gameloft.com/assets/5.1/images/Sp/ico/categories/sports-icon.png" alt=""></noscript>
+                                                    </div>
+                        <div>
+                            <span class="x-large-text">
+                                <strong data-gl-ent-data="name">
+                                    Sports                                </strong>
+                            </span>
+                        </div>
+                    </li>
+                </a>
+                                                <a href="https://store.gameloft.com/games.php?phoneId=1402&amp;cat%5B%5D=wap_android3_paidcasual&amp;sv=128jrz4efabu5sjprnb4toc82&amp;c=73&amp;lan=2">
+                    <li data-gl-ent="category">
+                        <div>
+                                                            <img class='product-icon big hide' src="https://wapshop.gameloft.com/assets/5.1/images/Sp/placeholder/icon.png" data-gl-lazy-src="https://wapshop.gameloft.com/assets/5.1/images/Sp/ico/categories/casual-icon.png" alt="">
+                                <noscript><img class='product-icon big' src="https://wapshop.gameloft.com/assets/5.1/images/Sp/ico/categories/casual-icon.png" alt=""></noscript>
+                                                    </div>
+                        <div>
+                            <span class="x-large-text">
+                                <strong data-gl-ent-data="name">
+                                    Casual                                </strong>
+                            </span>
+                        </div>
+                    </li>
+                </a>
+                                                <a href="https://store.gameloft.com/games.php?phoneId=1402&amp;cat%5B%5D=wap_android3_paidpuzzle&amp;sv=128jrz4efabu5sjprnb4toc82&amp;c=73&amp;lan=2">
+                    <li data-gl-ent="category">
+                        <div>
+                                                            <img class='product-icon big hide' src="https://wapshop.gameloft.com/assets/5.1/images/Sp/placeholder/icon.png" data-gl-lazy-src="https://wapshop.gameloft.com/assets/5.1/images/Sp/ico/categories/puzzle-icon.png" alt="">
+                                <noscript><img class='product-icon big' src="https://wapshop.gameloft.com/assets/5.1/images/Sp/ico/categories/puzzle-icon.png" alt=""></noscript>
+                                                    </div>
+                        <div>
+                            <span class="x-large-text">
+                                <strong data-gl-ent-data="name">
+                                    Puzzle                                </strong>
+                            </span>
+                        </div>
+                    </li>
+                </a>
+                                                <a href="https://store.gameloft.com/games.php?phoneId=1402&amp;cat%5B%5D=wap_android3_paidkids&amp;sv=128jrz4efabu5sjprnb4toc82&amp;c=73&amp;lan=2">
+                    <li data-gl-ent="category">
+                        <div>
+                                                            <img class='product-icon big hide' src="https://wapshop.gameloft.com/assets/5.1/images/Sp/placeholder/icon.png" data-gl-lazy-src="https://wapshop.gameloft.com/assets/5.1/images/Sp/ico/categories/kids-icon.png" alt="">
+                                <noscript><img class='product-icon big' src="https://wapshop.gameloft.com/assets/5.1/images/Sp/ico/categories/kids-icon.png" alt=""></noscript>
+                                                    </div>
+                        <div>
+                            <span class="x-large-text">
+                                <strong data-gl-ent-data="name">
+                                    Kids                                </strong>
+                            </span>
+                        </div>
+                    </li>
+                </a>
+                        </ul>
+</section>
+<script>
+var Gameloft = Gameloft || new Object();
+Gameloft.popup = Gameloft.popup || new Object();
+Gameloft.popup.box = Gameloft.popup.box || new Object();
+
+Gameloft.popup.box.legal = Gameloft.popup.box.legal || new Object();
+Gameloft.popup.box.legal.init = function (popupElement) {    
+    this.element = popupElement;
+    if (!this.element || !this.element.id) return false;
+    if ((typeof $ === 'undefined' || !$.magnificPopup) && !this.element.glPopup) return false;
+
+    document.querySelector('#' + this.element.id + ' a[href="#close"]').addEventListener('click', () => {
+        event.preventDefault();
+        try {
+            $.magnificPopup.close();
+        } catch (e) {
+            
+        }
+    });
+
+    const setContent = (data, divParent) => {
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = data;
+        while (tempDiv.firstChild) {
+            divParent.appendChild(tempDiv.firstChild);
+        }
+    };
+
+    document.querySelectorAll('a[href*="conditions.php"]').forEach(link => {
+        link.addEventListener('click', event => {
+            event.preventDefault();
+            const id = Gameloft.popup.box.legal.element.id;
+            const div = document.querySelector('#' + id + ' > .content-section');
+            div.innerHTML = ''; // Clear existing content
+            const hrefValue = event.target.closest('a').getAttribute('href');
+            const urlParams = new URLSearchParams(new URL(hrefValue).search);
+            const legalType = ((urlParams.get('type') || 'general') + (document.documentElement.lang ? '_' + document.documentElement.lang : '')).toLowerCase();
+            const data = sessionStorage.getItem(legalType);
+            if (!data) {
+                const loader = document.querySelector('#' + id + ' > .spinner-section');
+                loader.style.display = 'block'; // Show loading
+                fetch(hrefValue, {method: 'POST'})
+                        .then(response => {
+                            if (!response.ok)
+                                throw new Error('Network response was not ok');
+                            return response.text().then(text => {
+                                if (text.includes('<html')) {
+                                    window.location.href = response.url;
+                                    return null;
+                                }
+                                return text;
+                            });
+                        })
+                        .then(data => {
+                            if (!data) return;
+                            loader.style.display = 'none'; //Hide loading
+                            sessionStorage.setItem(legalType, data);
+                            setContent(data, div);
+                        })
+                        .catch(error => console.error('There was a problem with the fetch operation:', error));
+            } else {
+                setContent(data, div);
+            }
+            Gameloft.popup.box.legal.show();
+        });
+    });
+};
+
+Gameloft.popup.box.legal.show = function () {
+    if (!this.element || !this.element.id) return false;
+
+    try {
+        $.magnificPopup.open({
+            items: [{
+                src: '#' + this.element.id,
+                type: 'inline'
+            }],
+            fixedContentPos: true,
+            fixedBgPos: true,
+            overflowY: 'auto',
+            closeBtnInside: true,
+            preloader: false,
+            midClick: true,
+            removalDelay: 0,
+            mainClass: 'gl-mfp-zoom-in gl-mfp-blur',
+            callbacks: {
+                close: function () {
+                    document.body.style.overflow = '';
+                }
+            }
+        });
+    } catch (e) {
+        this.element.glPopup && this.element.glPopup({});
+    }
+};
+</script>
+
+<div id="legal-popup" class=" gl-popup-view gl-popup-hidden mfp-hide">
+    <div class="spinner-section" style="display: none;">
+        <div class="please-wait-text">Please Wait</div>
+        <div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+    </div>
+    <div class="content-section"></div>
+        <div class="close-button">
+        <a href="#close">
+            <div class="button-secondary">CLOSE</div>
+        </a>
+    </div>
+    </div>
+
+<script>
+window.addEventListener('load',function(){Gameloft&&Gameloft.popup&&Gameloft.popup.box&&Gameloft.popup.box.legal&&Gameloft.popup.box.legal.init(document.getElementById("legal-popup"));});
+</script>
+    <section class="terms-and-conditions">
+                                                        <div>
+                                <a href="https://store.gameloft.com/conditions.php?phoneId=1402&amp;type=conditions&amp;sv=128jrz4efabu5sjprnb4toc82&amp;c=73&amp;lan=2" class="terms-button">Terms of Use</a>
+                                                                <a href="https://store.gameloft.com/conditions.php?phoneId=1402&amp;type=private_policy&amp;sv=128jrz4efabu5sjprnb4toc82&amp;c=73&amp;lan=2" class="terms-button">Privacy Policy</a>
+                                </div>
+                                                            <div>
+                                <a href="https://store.gameloft.com/conditions.php?phoneId=1402&amp;type=eula&amp;sv=128jrz4efabu5sjprnb4toc82&amp;c=73&amp;lan=2" class="terms-button">EULA</a>
+                                                                <a href="https://store.gameloft.com/conditions.php?phoneId=1402&amp;type=legal_notices&amp;sv=128jrz4efabu5sjprnb4toc82&amp;c=73&amp;lan=2" class="terms-button">Legal Notices</a>
+                                </div>
+                            <h6 class="gray-color small-text">© 2002-2026 Gameloft. All rights reserved. Gameloft and the Gameloft logo are trademarks of Gameloft in the U.S. and/or other countries.<br>All other trademarks are the property of their respective owners.</h6>
+    </section>
+    <footer class="blue-color primary-color">
+        <ul>
+                            <li class="active">
+                                            <span></span>
+                    
+                    <a href="https://store.gameloft.com/index.php?phoneId=1402&amp;sv=128jrz4efabu5sjprnb4toc82&amp;c=73&amp;lan=2">
+                        <div class="bot-nav-thumb">
+                                                            <svg width="1.85rem" height="1.85rem" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>images/SVG/home_active</title>
+    <g id="UI-Elements" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Assets" transform="translate(-394, -4864)">
+            <g id="home_active" transform="translate(394, 4864)">
+                <rect id="Rectangle" fill="#FFFFFF" opacity="0" x="0" y="0" width="22" height="22"></rect>
+                <g id="home" transform="translate(3.3846, 2.5385)" fill="currentColor">
+                    <path d="M1.52307692,6.53006447 L1.52307692,14.6153846 C1.52307692,15.040219 1.86402931,15.3846154 2.28461538,15.3846154 L12.9461538,15.3846154 C13.3667399,15.3846154 13.7076923,15.040219 13.7076923,14.6153846 L13.7076923,6.53006447 L7.61538462,1.74373968 L1.52307692,6.53006447 Z M0.293999071,5.54665214 L7.14784523,0.162036756 C7.42284475,-0.054012252 7.80792448,-0.054012252 8.08292401,0.162036756 L14.9367702,5.54665214 C15.1222707,5.69238768 15.2307692,5.9164689 15.2307692,6.15384615 L15.2307692,14.6153846 C15.2307692,15.8898879 14.2079121,16.9230769 12.9461538,16.9230769 L2.28461538,16.9230769 C1.02285715,16.9230769 1.33226763e-15,15.8898879 1.33226763e-15,14.6153846 L1.33226763e-15,6.15384615 C1.33226763e-15,5.9164689 0.10849855,5.69238768 0.293999071,5.54665214 Z" id="Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>                                <p class="medium-text gray-color active">Home</p>
+                                                    </div>
+                    </a>
+                </li>
+                            <li class="">
+                    
+                    <a href="https://store.gameloft.com/games.php?phoneId=1402&amp;sv=128jrz4efabu5sjprnb4toc82&amp;c=73&amp;lan=2">
+                        <div class="bot-nav-thumb">
+                                                            <svg width="1.85rem" height="1.85rem" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>images/SVG/all_games_inactive</title>
+    <g id="UI-Elements" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Assets" transform="translate(-496, -4823)" fill="#9FAFB2">
+            <g id="Group" transform="translate(496, 4826.3846)">
+                <path d="M10.9117432,0 L11.3415357,0.00222611107 C15.9236854,0.0514242787 19.0898444,0.882188265 20.4398141,2.60231986 C21.7038386,4.21299167 22.2407145,6.89737624 21.8993462,9.36202584 C21.5713107,11.7304907 19.7441111,13.5384615 17.4775944,13.5384615 C16.2207859,13.5384615 15.2222546,13.0166034 13.7446794,11.7273499 L12.9513501,11.0328535 L12.7570178,10.8729145 L12.5917567,10.7459354 L12.5174499,10.6927112 C12.0751994,10.3844204 11.6613712,10.2178828 11.3206099,10.1794946 L11.0652581,10.1671134 L11,10.1651752 L10.73292,10.17541 C10.3386226,10.2178828 9.92479439,10.3844204 9.48252588,10.6927238 C9.45851293,10.7094621 9.43380377,10.7271552 9.40822723,10.7459421 L9.24298998,10.872902 C9.21325919,10.8966205 9.18231866,10.9217109 9.1499972,10.9483124 L8.93812785,11.1271656 L8.0652277,11.8911952 C6.69042838,13.0609899 5.72455641,13.5384615 4.52239941,13.5384615 C2.25588698,13.5384615 0.428698108,11.7304972 0.100647482,9.36202521 C-0.240708399,6.89736765 0.296170122,4.21298791 1.56019938,2.60231013 C2.94770532,0.83435588 6.1813244,0.0103800185 10.9117432,0 Z M11.0613678,1.18047135 L10.9816732,1.18047135 C6.71923813,1.18982635 3.89717645,1.57757337 2.59119954,3.21025713 C1.28522264,4.8429409 0.98946911,7.04805979 1.28522264,9.18345925 C1.52188484,10.8921217 3.05117129,12.3872098 4.44693388,12.3872098 C5.84269646,12.3872098 5.89406758,12.101862 6.82521325,11.3484328 L7.13082535,11.0940327 L8.11163524,10.2379054 L8.34483429,10.0465242 C8.45443917,9.95943111 8.55485774,9.88425146 8.6519654,9.81656221 C9.3068548,9.36004177 9.83558155,9.08127149 10.5821329,9.00253678 L10.9621726,8.9864839 L11.0457084,8.98787906 L11.432396,9.0066214 C12.1254112,9.08127149 12.5512416,9.22635037 13.2061129,9.68285821 C13.3032296,9.75055376 13.4036527,9.82573656 13.5132761,9.91284521 L13.7465363,10.1042787 L13.8756411,10.2143872 L14.7878675,10.9749895 C15.9009093,11.950931 16.724713,12.3872098 17.4426504,12.3872098 C18.8384171,12.3872098 20.3410536,10.8921171 20.577705,9.18345925 C20.8734697,7.04806294 20.8734697,4.88638399 19.4728587,3.21025713 C18.0722477,1.53413028 15.3609127,1.18988724 11.0613678,1.18047135 Z M7.1562361,4.28669182 C7.60566834,4.28669182 7.96999964,4.62289781 7.96999964,5.03763909 C7.96999964,5.18991293 7.92089787,5.5320058 7.8365042,5.90405632 C8.24268468,5.82634956 8.61618659,5.78117325 8.78180916,5.78117325 C9.23230831,5.78117325 9.59750272,6.11572219 9.59750272,6.52841396 C9.59750272,6.94110573 9.23230831,7.27565467 8.78180916,7.27565467 C8.61810463,7.27565467 8.25123194,7.2314813 7.85049389,7.1554316 C7.92629235,7.49264054 7.96999964,7.80141805 7.96999964,7.95696238 C7.96999964,8.40606556 7.60566834,8.7701361 7.1562361,8.7701361 C6.70681586,8.7701361 6.34248456,8.40606556 6.34248456,7.95696238 C6.34248456,7.8030751 6.38526879,7.49918151 6.45959276,7.16611519 C6.0906342,7.23558031 5.75404253,7.27565467 5.58734106,7.27565467 C5.10554194,7.27565467 4.71496949,6.94110573 4.71496949,6.52841396 C4.71496949,6.11572219 5.10554194,5.78117325 5.58734106,5.78117325 C5.75614039,5.78117325 6.09915748,5.82225056 6.47357046,5.89337273 C6.39065129,5.52546482 6.34248456,5.18843031 6.34248456,5.03763909 C6.34248456,4.62289781 6.70681586,4.28669182 7.1562361,4.28669182 Z M15.2937875,7.27561107 C15.74292,7.27561107 16.107539,7.61042165 16.107539,8.02285178 C16.107539,8.4352383 15.74292,8.77009249 15.2937875,8.77009249 C14.8446789,8.77009249 14.480036,8.4352383 14.480036,8.02285178 C14.480036,7.61042165 14.8446789,7.27561107 15.2937875,7.27561107 Z M13.6662844,5.78117325 C14.115417,5.78117325 14.480036,6.11598383 14.480036,6.52841396 C14.480036,6.94080048 14.115417,7.27565467 13.6662844,7.27565467 C13.2171758,7.27565467 12.8525329,6.94080048 12.8525329,6.52841396 C12.8525329,6.11598383 13.2171758,5.78117325 13.6662844,5.78117325 Z M16.9213146,5.78117325 C17.3704471,5.78117325 17.7350661,6.11598383 17.7350661,6.52841396 C17.7350661,6.94080048 17.3704471,7.27565467 16.9213146,7.27565467 C16.472206,7.27565467 16.107563,6.94080048 16.107563,6.52841396 C16.107563,6.11598383 16.472206,5.78117325 16.9213146,5.78117325 Z M15.2937875,4.28669182 C15.74292,4.28669182 16.107539,4.62150241 16.107539,5.03393253 C16.107539,5.44631906 15.74292,5.78117325 15.2937875,5.78117325 C14.8446789,5.78117325 14.480036,5.44631906 14.480036,5.03393253 C14.480036,4.62150241 14.8446789,4.28669182 15.2937875,4.28669182 Z" id="Combined-Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>                                <p class="medium-text gray-color ">Games</p>
+                                                    </div>
+                    </a>
+                </li>
+                            <li class="">
+                    
+                    <a href="https://store.gameloft.com/videos.php?phoneId=1402&amp;sv=128jrz4efabu5sjprnb4toc82&amp;c=73&amp;lan=2">
+                        <div class="bot-nav-thumb">
+                                                            <svg width="1.85rem" height="1.85rem" viewBox="0 0 22 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>images/SVG/videos_inactive</title>
+    <g id="UI-Elements" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Assets" transform="translate(-716, -5085)" fill="#9FAFB2">
+            <g id="videos_inactive" transform="translate(716, 5085)">
+                <path d="M19.8,0 C21.0150264,0 22,1.05344765 22,2.35294118 L22,17.6470588 C22,18.9465524 21.0150264,20 19.8,20 L2.2,20 C0.98497355,20 0,18.9465524 0,17.6470588 L0,2.35294118 C0,1.05344765 0.98497355,0 2.2,0 L19.8,0 Z M19.8,1.4850253 L2.2,1.4850253 C1.72735499,1.4850253 1.45868677,1.685686 1.45868677,2.24720514 L1.44982553,2.35294118 L1.44982553,17.6470588 C1.44982553,18.2052364 1.60418493,18.5962538 2.1011368,18.5867765 L2.2,18.5962538 L19.8,18.5962538 C20.3496058,18.5962538 20.5786176,18.3035661 20.5697564,17.7527949 L20.5786176,17.6470588 L20.5786176,2.35294118 C20.5786176,1.9027415 20.4103178,1.49450256 19.8988632,1.49450256 L19.8,1.4850253 Z M9.89916001,5.2638682 L15.0291454,8.28293069 C15.3256926,8.45745258 15.5717447,8.70933477 15.7422289,9.01291052 C16.2748196,9.96127743 15.9555723,11.1720674 15.0291701,11.7172857 L9.89918478,14.7364514 C9.60578511,14.9091268 9.27327433,15 8.93484413,15 C7.86625922,15 7,14.113202 7,13.0192812 L7,6.98105298 C7,6.6346086 7.08876348,6.29422346 7.25743044,5.9938734 C7.79000739,5.04549844 8.97275,4.71866398 9.89916001,5.2638682 Z M8.4524954,6.73574087 C8.45196933,6.77002328 8.45803742,6.89977877 8.4524954,6.93202923 L8.44831544,6.98105298 L8.44831544,13.0192812 C8.44831544,13.5252821 8.76795085,13.7310423 9.06943946,13.6862923 C9.1014171,13.6815458 9.13352652,13.6805225 9.16360135,13.669367 L9.20720241,13.6486424 L14.3371878,10.6294767 C14.7181426,10.4051405 14.7742468,9.77560128 14.5256624,9.49792978 C14.5043436,9.47411637 14.4883913,9.44338796 14.46362,9.42212667 L14.4237933,9.39364695 L9.29380799,6.37458446 C8.81988824,6.13280612 8.45803742,6.37458446 8.4524954,6.73574087 Z" id="Combined-Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>                                <p class="medium-text gray-color ">Videos</p>
+                                                    </div>
+                    </a>
+                </li>
+                            <li class="">
+                    
+                    <a href="https://store.gameloft.com/profile.php?phoneId=1402&amp;sv=128jrz4efabu5sjprnb4toc82&amp;c=73&amp;lan=2">
+                        <div class="bot-nav-thumb">
+                                                            <svg width="1.85rem" height="1.85rem" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>images/SVG/my_profile_inactive</title>
+    <g id="UI-Elements" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Assets" transform="translate(-554, -4823)">
+            <g id="my_profile_inactive" transform="translate(554, 4823)">
+                <rect id="Rectangle" fill="#FFFFFF" opacity="0" x="0" y="0" width="22" height="22"></rect>
+                <g id="my_profile" transform="translate(3.3846, 2.5385)" fill="#9FAFB2">
+                    <g id="profile" transform="translate(0, 0)">
+                        <path d="M15.2307692,16.0769231 C15.2307692,16.5442409 14.8519332,16.9230769 14.3846154,16.9230769 C13.9172975,16.9230769 13.5384615,16.5442409 13.5384615,16.0769231 L13.5384615,14.3846154 C13.5384615,12.9826618 12.4019536,11.8461538 11,11.8461538 L4.23076923,11.8461538 C2.82881564,11.8461538 1.69230769,12.9826618 1.69230769,14.3846154 L1.69230769,16.0769231 C1.69230769,16.5442409 1.31347171,16.9230769 0.846153846,16.9230769 C0.378835981,16.9230769 0,16.5442409 0,16.0769231 L0,14.3846154 C0,12.0480261 1.8941799,10.1538462 4.23076923,10.1538462 L11,10.1538462 C13.3365893,10.1538462 15.2307692,12.0480261 15.2307692,14.3846154 L15.2307692,16.0769231 Z M7.61538462,8.46153846 C5.27879529,8.46153846 3.38461538,6.56735856 3.38461538,4.23076923 C3.38461538,1.8941799 5.27879529,0 7.61538462,0 C9.95197394,0 11.8461538,1.8941799 11.8461538,4.23076923 C11.8461538,6.56735856 9.95197394,8.46153846 7.61538462,8.46153846 Z M7.61538462,6.76923077 C9.01733821,6.76923077 10.1538462,5.63272283 10.1538462,4.23076923 C10.1538462,2.82881564 9.01733821,1.69230769 7.61538462,1.69230769 C6.21343102,1.69230769 5.07692308,2.82881564 5.07692308,4.23076923 C5.07692308,5.63272283 6.21343102,6.76923077 7.61538462,6.76923077 Z" id="Combined-Shape"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>                                <p class="medium-text gray-color ">Account</p>
+                                                    </div>
+                    </a>
+                </li>
+                    </ul>
+    </footer>
+            </body>
+</html>

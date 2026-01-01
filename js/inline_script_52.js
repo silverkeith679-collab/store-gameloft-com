@@ -1,0 +1,4 @@
+
+        var Gameloft=Gameloft||{};Gameloft.core=Gameloft.core||{};Gameloft.core.addEventListener=function(a,c,b){"undefined"===typeof b&&(b=!1);this._addEventListener(a,c,b);this.eventListeners=this.eventListeners||{};this.eventListeners[a]=this.eventListeners[a]||[];this.eventListeners[a].push({listener:c,options:b});};Window.prototype._addEventListener=Window.prototype.addEventListener;Window.prototype.addEventListener=Gameloft.core.addEventListener;
+        Document.prototype._addEventListener=Document.prototype.addEventListener;Document.prototype.addEventListener=Gameloft.core.addEventListener;Element.prototype._addEventListener=Element.prototype.addEventListener;Element.prototype.addEventListener=Gameloft.core.addEventListener;
+    
